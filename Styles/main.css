@@ -1,0 +1,170 @@
+/* ===== Custom font ===== */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+    /* ===== custom scrollbar ===== */
+    .scrollbar::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+    }
+    
+    .scrollbar::-webkit-scrollbar-thumb {
+        background: linear-gradient(transparent , #ef4444 70%);
+        border-radius: 8px;
+    }
+    .scrollbar::-webkit-scrollbar-thumb:hover{
+        background: linear-gradient(transparent, #4ade80 70%);
+        transition: all 3s linear;
+    }
+    
+    .scrollbar::-webkit-scrollbar-track {
+        background-color: rgb(223, 215, 215);
+    }
+    .scrollbar-dark::-webkit-scrollbar-track{
+        background-color: #334155;
+    }
+    /* ===== custom scrollbar ===== */
+
+
+
+
+    /* ===== Header section Start ===== */
+    .logo-img{
+        @apply h-[46px] w-[138px] cursor-pointer bg-[url('/Assets/logo.webp')] bg-no-repeat bg-cover dark:bg-[url('/Assets/logo-white.webp')]
+    }
+
+    .dropdown:hover .dropdown-content{
+        display: block;
+    }
+    /* ===== Header section End ===== */
+
+
+    /* ===== Introduction section Start ===== */
+    .card{
+        @apply bg-[#2D3142] p-4 rounded-xl self-stretch hover:scale-105 hover:shadow-lg hover:-translate-y-4 transition-all duration-200 dark:bg-slate-900 relative z-0
+    }
+    /* ===== Introduction section End ===== */
+
+    .btn{
+        @apply text-red-500 font-bold border-2 w-fit border-red-500 rounded-full py-2 px-8 cursor-pointer flex items-center hover:scale-105 transition-all 
+    }
+
+    .btn:hover .icon{
+        display: block;
+        animation:  a-1 0.3s linear;
+    }
+    @keyframes a-1{
+        0%{
+            transform: translateX(0px);
+        }
+        100%{
+            transform: translateX(12px);
+        }
+    }
+
+
+    /* ===== Stages section Start ===== */
+    .icon-clr{
+        animation: clr 3s ease-in infinite;
+    }
+    @keyframes clr{
+        20%{
+            fill: #00FF84;
+            transform: scale(1.4);
+        }
+        50%{
+            fill: #ef4444;
+        }
+    }
+    /* ===== Stages section End ===== */
+
+
+    /* ===== Team-profile section Start ===== */
+    .profile-card{
+        @apply bg-white p-6 w-5/6 xl:w-full rounded-xl flex flex-col items-center self-stretch shadow-[0_5px_20px_0_rgba(1,1,1,0.35)] hover:shadow-[0_5px_30px_0_rgba(1,1,1,0.4)] hover:-translate-y-4 transition-all duration-200 dark:bg-slate-800 dark:text-white
+    }
+    /* ===== Team-profile section End ===== */
+
+
+    /* ===== Footer section Start ===== */
+    .footer-link-1{
+        @apply text-lg font-semibold opacity-100 hover:opacity-70  transition-all cursor-pointer
+    }
+    .footer-link-2{
+        @apply opacity-65 hover:opacity-100  transition-all cursor-pointer
+    }
+    /* ===== Footer section End ===== */
+    
+
+
+
+    /* ===== Scroll Animation Start ===== */
+    .s-animation-b{
+        animation: s-animation-b both;
+        animation-timeline: view(75% 5%);
+    }
+    @keyframes s-animation-b{
+        from{
+            opacity: 0;
+            transform: translateY(200px) scale(0.3);
+        }
+        to{
+            opacity: 1;
+            transform: translateY(0px) scale(1);
+        }
+    }
+    footer ul > li:first-child{
+        @apply s-animation-b
+    }
+
+    .s-animation-b2{
+        animation: s-animation-b2 both;
+        animation-timeline: view(95% 5%);
+    }
+    @keyframes s-animation-b2{
+        from{
+            opacity: 0;
+            transform: translateY(300px);
+        }
+        to{
+            opacity: 1;
+            transform: translateY(0px);
+        }
+    }
+
+    .s-animation-r{
+        animation: s-animation-r both;
+        animation-timeline: view(95% 5%);
+    }
+    @keyframes s-animation-r{
+        from{
+            opacity: 0;
+            transform: translateX(250px) scale(0.3);
+        }
+        to{
+            opacity: 1;
+            transform: translateX(0px) scale(1);
+        }
+    }
+
+    .s-animation-l{
+        animation: s-animation-l both;
+        animation-timeline: view(95% 5%);
+    }
+    @keyframes s-animation-l{
+        from{
+            opacity: 0;
+            transform: translateX(-250px) scale(0.3);
+        }
+        to{
+            opacity: 1;
+            transform: translateX(0px) scale(1);
+        }
+    }
+    /* ===== Scroll Animation End ===== */
+}
